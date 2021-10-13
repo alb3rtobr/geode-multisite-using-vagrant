@@ -1,0 +1,5 @@
+start locator --name=locator --port=10334 --J=-Dgemfire.distributed-system-id=1 --J='-Dgemfire.remote-locators=10.0.0.11[10334]'
+start server  --name=server1 --locators=localhost[10334] --J=-Dgemfire.distributed-system-id=1 --server-port=40404 
+connect --locator=localhost[10334]
+create gateway-sender --id=toSite2 --remote-distributed-system-id=2 --parallel=false 
+create region --name=test --type=REPLICATE --gateway-sender-id=toSite2
