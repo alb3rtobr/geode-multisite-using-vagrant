@@ -20,14 +20,16 @@ This repository shows how to setup two Geode sites (one locator and one server e
 
       ```
       $ vagrant ssh site2vm
-      $ gfsh run --file=/vagrant/site2/site2.gfsh
+      $ cd /vagrant/site2
+      $ gfsh run --file=site2.gfsh
       ```
 
     - Site 1:
 
       ```
       $ vagrant ssh site1vm
-      $ gfsh run --file=/vagrant/site1/site1.gfsh
+      $ cd /vagrant/site1
+      $ gfsh run --file=site1.gfsh
       ```
     
     Both sites will have one locator, one server and a `test` region (type `REPLICATED`). Site 1 will have a serial gateway sender and site 2 will have a gateway receiver.
